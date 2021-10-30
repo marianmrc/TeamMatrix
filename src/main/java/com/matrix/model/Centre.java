@@ -34,4 +34,8 @@ public class Centre {
 
     @Column(name = "first_dose_schedule", nullable = false)
     private Date date;
+
+    @ManyToOne
+    @JoinColumn(name = "schedule_id", nullable = false)
+    private Schedule schedule;
 }
