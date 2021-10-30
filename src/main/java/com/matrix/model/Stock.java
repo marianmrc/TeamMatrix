@@ -24,4 +24,8 @@ public class Stock {
 
     @Column(name = "nr_dose", nullable = false)
     private Integer nrDose;
+
+    @ManyToOne
+    @JoinColumn(name = "centre_id", nullable = false)
+    private Centre centre;
 }
