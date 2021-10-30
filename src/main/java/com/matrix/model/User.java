@@ -4,13 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
 
 @Entity
 @Table
@@ -20,49 +17,24 @@ import java.util.Date;
 @Setter
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column
-    @NotNull
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column
-    @NotNull
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column
-    @NotNull
+    @Column(nullable = false, unique = true)
     @Email
     private String email;
 
-    @Column
-    @NotNull
+    @Column(nullable = false)
     @Size(min = 8)
     private String password;
 
-    @Column
-    @NotNull
+    @Column(nullable = false, unique = true)
     @Size(min = 13, max = 13)
     private String cnp;
-
-    @JoinColumn(name = "id", table = "Vaccine")
-    @OneToOne
-    private Long vaccineType;
-
-    @Column
-    @Nullable
-    private Date firstDoseSchedule;
-
-    @Column
-    @Nullable
-    private Date secondDoseSchedule;
-
-    @Column
-    @Nullable
-    private Boolean firstDoseCompleted;
-
-    @Column
-    @Nullable
-    private Boolean secondDoseCompleted;
 }
