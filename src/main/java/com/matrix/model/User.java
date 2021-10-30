@@ -10,7 +10,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table
+@Table(name = "USER")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long userId;
 
     @Column(name = "first_name", nullable = false)
     private String firstName;

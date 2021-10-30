@@ -8,7 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "VACCINE")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Vaccine {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long vaccineId;
 
     @Column(name = "vaccine_type", nullable = false, unique = true)
     private String vaccineType;

@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table
+@Table(name = "VACCINATION")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -17,7 +17,7 @@ import java.util.Date;
 public class Vaccination {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long vaccinationId;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "vaccine_type", nullable = false, unique = true)
@@ -34,4 +34,8 @@ public class Vaccination {
 
     @Column(name = "second_dose_completed", nullable = false)
     private Boolean secondDoseCompleted;
+
+    @ManyToOne
+    @JoinColumn(name = "administrator_id", nullable = false)
+    private Administrator administrator;
 }

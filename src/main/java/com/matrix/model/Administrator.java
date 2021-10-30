@@ -8,9 +8,10 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
-@Table
+@Table(name = "ADMINISTRATOR")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -18,7 +19,7 @@ import javax.validation.constraints.Size;
 public class Administrator {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long administratorId;
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
@@ -33,4 +34,7 @@ public class Administrator {
     @Column(nullable = false)
     @Size(min = 8)
     private String password;
+
+    @OneToMany(mappedBy = "administrator")
+    private List<Vaccination> vaccinations;
 }
