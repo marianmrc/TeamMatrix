@@ -20,7 +20,7 @@ public class Centre {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long centreId;
 
-    @OneToMany(mappedBy = "stock")
+    @OneToMany(mappedBy = "centre")
     private List<Stock> stocks;
 
     @Column(name = "address", nullable = false)
