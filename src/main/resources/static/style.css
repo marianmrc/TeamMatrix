@@ -1,12 +1,14 @@
 body{
- 
-    /* background: rgb(49,80,139);
+    background: rgb(2,106,219);
+    background: linear-gradient(90deg, rgba(6,40,73,1) 0%, rgba(95,210,199,1) 37%, rgba(95,210,199,1)57%, rgba(6,40,73,1) 100%);
+    /* background: rgb(2,106,219);
+          background: linear-gradient(90deg, rgba(2,106,219,1) 0%, rgba(95,210,199,1) 37%, rgba(95,210,199,1)57%, rgba(6,40,73,1) 100%);
+     background: rgb(49,80,139);
     background: linear-gradient(90deg, rgba(49,80,139,1) 0%, rgba(87,184,174,1) 48%, rgba(34,72,142,1) 100%);
    background: rgb(147,6,6);
     background: linear-gradient(90deg, rgba(147,6,6,1) 0%, rgba(81,154,99,1) 48%, rgba(102,0,0,1) 100%);
-*/
-background: rgb(2,106,219);
-background: linear-gradient(90deg, rgba(2,106,219,1) 0%, rgba(95,210,199,1) 37%,  rgba(95,210,199,1)57%,rgba(6,40,73,1) 100%); 
+    */
+
 }
 .header{
 margin-left:30%;
