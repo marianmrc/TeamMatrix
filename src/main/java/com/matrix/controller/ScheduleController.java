@@ -2,9 +2,9 @@ package com.matrix.controller;
 
 import com.matrix.service.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
-@RestController
+@Controller
 public class ScheduleController {
     private ScheduleService scheduleService;
 

@@ -2,9 +2,9 @@ package com.matrix.controller;
 
 import com.matrix.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
-@RestController
+@Controller
 public class StockController {
     private final StockService stockService;
 
