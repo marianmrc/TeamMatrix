@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="static/style.css"/>
+    <title>
+        Platforma de vaccinare impotriva COVID-19
+    </title>
+</head>
+<body>
+<div class="logo">
+    <img id="logo" src="static/img/logo.png" alt="logo"/>
+</div>
+
+<div class="logout">
+    <button class="btn btn-outline-info" type="button" onClick="logout()"> Log out</button>
+</div>
+
+<div class="headerVaccination">
+    <h3>Platforma de vaccinare impotriva COVID-19</h3>
+</div>
+<div class="modal-dialog" role="document" >
+    <div class="modal-content"id="programareModal" >
+        <div class="modal-header">
+            <h5>Selectati locatia dorita a centrului de vaccinare</h5>
+            <button type="button" class="close" data-mdb-dismiss="modal" aria-label="Close" onclick="closeDivProgramare()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="judet">Judet</label>
+                    <select class="selectpicker" data-live-search="true">
+                        <option data-tokens="Alba">Alba</option>
+                        <option data-tokens="Arad">Arad</option>
+                        <option data-tokens="Argeș">Argeș</option>
+                        <option data-tokens="Bacău">Bacău</option>
+                        <option data-tokens="Bihor">Bihor</option>
+                        <option data-tokens="Bistrița-Năsăud">Bistrița-Năsăud</option>
+                        <option data-tokens="Botoșani">Botoșani</option>
+                        <option data-tokens="Brașov">Brașov</option>
+                        <option data-tokens="Brăila">Brăila</option>
+                        <option data-tokens="Mun. București">Mun. București</option>
+                        <option data-tokens="Buzău">Buzău</option>
+                        <option data-tokens="Caraș-Severin">Caraș-Severin</option>
+                        <option data-tokens="Călărași">Călărași</option>
+                        <option data-tokens="Cluj">Cluj</option>
+                        <option data-tokens="Constanța">Constanța</option>
+                        <option data-tokens="Covasna">Covasna</option>
+                        <option data-tokens="Dâmbovița">Dâmbovița</option>
+                        <option data-tokens="Dolj">Dolj</option>
+                        <option data-tokens="Galați">Galați</option>
+                        <option data-tokens="Giurgiu">Giurgiu</option>
+                        <option data-tokens="Gorj">Gorj</option>
+                        <option data-tokens="Harghita">Harghita</option>
+                        <option data-tokens="Hunedoara">Hunedoara</option>
+                        <option data-tokens="Ialomița">Ialomița</option>
+                        <option data-tokens="Iași">Iași</option>
+                        <option data-tokens="Ilfov">Ilfov</option>
+                        <option data-tokens="Maramureș">Maramureș</option>
+                        <option data-tokens="Mehedinți">Mehedinți</option>
+                        <option data-tokens="Mureș">Mureș</option>
+                        <option data-tokens="Neamț">Neamț</option>
+                        <option data-tokens="Olt">Olt</option>
+                        <option data-tokens="Prahova">Prahova</option>
+                        <option data-tokens="Satu Mare">Satu Mare</option>
+                        <option data-tokens="Sălaj">Sălaj</option>
+                        <option data-tokens="Sibiu">Sibiu</option>
+                        <option data-tokens="Suceava">Suceava</option>
+                        <option data-tokens="Teleorman">Teleorman</option>
+                        <option data-tokens="Timiș">Timiș</option>
+                        <option data-tokens="Tulcea">Tulcea</option>
+                        <option data-tokens="Vaslui">Vaslui</option>
+                        <option data-tokens="Vâlcea">Vâlcea</option>
+                        <option data-tokens="Vrancea">Vrancea</option>
+                    </select>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="static/script.js"></script>
+<script src="static/bootstrap/js/bootstrap.min.js"></script>

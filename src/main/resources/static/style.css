@@ -10,25 +10,46 @@ body{
     */
 
 }
+
 .header{
-margin-left:30%;
+    margin-top:-30px;
+    margin-left:34%;
 }
-.buttons{
-    margin-left:88%;
-   margin-top:-80px;
+
+.headerVaccination{
+    margin-top:10px;
+    margin-left:34%;
 }
+
+.logout{
+    margin-left:93%;
+    margin-top: -5%;
+}
+#registerModal{
+    margin-top:5%;
+    margin-left:35%;
+}
+
+#loginModal{
+margin-left:35%;
+margin-top:10%;
+}
+
 #logo{
     width:100px;
-    height:100px; 
+    height:100px;
 }
+
 .logo{
     width:200px;
     margin-left:1%;
 }
+
 #submitRegister{
     margin-left:27%;
     width:200px;
 }
+
 #submitLogin{
     margin-left:27%;
     width:200px;
@@ -44,4 +65,8 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+#programareModal{
+    width:500px;
 }
