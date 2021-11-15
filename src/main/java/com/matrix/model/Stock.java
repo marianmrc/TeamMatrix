@@ -14,6 +14,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class Stock {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long stockId;

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class VaccineController {
+
     private final VaccineService vaccineService;
 
     @Autowired

@@ -16,6 +16,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long userId;

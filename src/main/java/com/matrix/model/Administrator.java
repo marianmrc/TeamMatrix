@@ -17,6 +17,7 @@ import java.util.List;
 @Getter
 @Setter
 public class Administrator {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long administratorId;

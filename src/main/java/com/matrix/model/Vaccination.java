@@ -15,6 +15,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class Vaccination {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long vaccinationId;

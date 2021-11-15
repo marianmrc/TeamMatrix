@@ -16,6 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 public class Centre {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long centreId;
