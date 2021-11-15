@@ -28,9 +28,9 @@
             </button>
         </div>
         <div class="modal-body">
-            <form>
-                <div class="form-group">
-                    <label for="judet">Judet</label>
+            <form id="vaccinForm">
+                <div class="form-group formVaccin">
+                    <label>Judetul</label>
                     <select class="selectpicker" data-live-search="true">
                         <option data-tokens="Alba">Alba</option>
                         <option data-tokens="Arad">Arad</option>
@@ -76,7 +76,26 @@
                         <option data-tokens="Vrancea">Vrancea</option>
                     </select>
                 </div>
-
+                <div class="form-group formVaccin">
+                    <div class="multiselect">
+                        <div class="selectBox" onclick="showCheckboxes()">
+                            <select>
+                                <option>Selectati tipul vaccinului</option>
+                            </select>
+                        </div>
+                        <div id="checkboxes">
+                            <label for="astraZeneca">
+                                <input type="checkbox" id="astraZeneca" value="astraZeneca" checked/>Astra Zeneca</label>
+                            <label for="pfizer">
+                                <input type="checkbox" id="pfizer" value="pfizer" checked/>Pfizer</label>
+                            <label for="moderna">
+                                <input type="checkbox" id="moderna" value="moderna" checked/>Moderna</label>
+                            <label for="johnson">
+                                <input type="checkbox" id="johnson" value="johnson" checked/>Johnson & Johnson</label>
+                        </div>
+                    </div>
+                </div>
+                <button form="vaccinForm" id="submitVaccin" class="btn btn-info btn-sm" onClick="getVaccination()">Cauta</button>
             </form>
         </div>
     </div>

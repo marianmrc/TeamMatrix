@@ -1,17 +1,17 @@
-function showDiv() {
-    document.getElementById('registerModal').style.display='block';
-    document.getElementById('loginModal').style.display='none';
- }
-
-function login(){
-    document.getElementById('registerModal').style.display='none';
-    document.getElementById('loginModal').style.display='block';
+function closeDivProgramare() {
+   document.getElementById('loginModal').style.display='none';
 }
- function closeDiv() {
-    document.getElementById('registerModal').style.display='none';
- }
+$('.mdb-select').materialSelect();
 
- function closeDivLogin() {
-    document.getElementById('loginModal').style.display='none';
- }
+var expanded = false;
 
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
