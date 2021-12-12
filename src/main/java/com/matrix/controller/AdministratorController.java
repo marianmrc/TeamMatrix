@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class AdministratorController {
-
     private final AdministratorService administratorService;
 
     @Autowired

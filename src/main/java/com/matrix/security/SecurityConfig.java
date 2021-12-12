@@ -10,7 +10,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
     private final UserSecurityService userSecurityService;
     private final PasswordEncoder passwordEncoder;
 
@@ -29,6 +28,7 @@ public class SecurityConfig {
                     .antMatchers("/platforma/save").permitAll()
                     .antMatchers("/bootstrap/css/**").permitAll()
                     .antMatchers("/bootstrap/css/bootstrap.min.css").permitAll()
+                    .antMatchers("/bootstrap/css/style.css").permitAll()
                     .anyRequest()
                     .authenticated()
                     .and()

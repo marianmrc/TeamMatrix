@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class StockController {
-
     private final StockService stockService;
 
     @Autowired

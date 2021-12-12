@@ -6,11 +6,12 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class VaccinationController {
-
     private final VaccinationService vaccinationService;
 
     @Autowired
     public VaccinationController(VaccinationService vaccinationService) {
         this.vaccinationService = vaccinationService;
     }
+
+
 }

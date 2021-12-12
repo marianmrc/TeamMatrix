@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AdministratorService {
-
     private final AdministratorRepository administratorRepository;
 
     @Autowired

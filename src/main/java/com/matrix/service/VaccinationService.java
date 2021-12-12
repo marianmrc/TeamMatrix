@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class VaccinationService {
-
     private final VaccinationRepository vaccinationRepository;
 
     @Autowired
