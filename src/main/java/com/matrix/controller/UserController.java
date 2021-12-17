@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
@@ -26,8 +23,20 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping({"/login"})
-    public String login() {
+    @RequestMapping(value = "/login")
+    public String login(@ModelAttribute User user,
+                        BindingResult result,
+                        Model model) {
+        return "login";
+    }
+
+    @PostMapping(value = "/loginProcess")
+    public String loginProcess(@ModelAttribute User user,
+                               BindingResult result,
+                               Model model) {
+        if (userService.login(user.getEmail(), user.getPassword())) {
+            return "vaccination";
+        }
         return "login";
     }
 
@@ -35,6 +44,12 @@ public class UserController {
     public String getIndex(Model model, Principal principal) {
         model.addAttribute("user", userService.findUserByEmail(principal.getName()));
         return "vaccination";
+    }
+
+    @GetMapping("/user")
+    public String getUserByEmail(Model model, Principal principal) {
+        model.addAttribute("user", userService.findUserByEmail(principal.getName()));
+        return "user";
     }
 
     @GetMapping("/register")
@@ -52,7 +67,6 @@ public class UserController {
             model.addAttribute("user", user);
             return "register";
         }
-        user.setPassword(new PasswordEncoder().encode(user.getPassword()));
         try {
             userService.createUser(user);
             return "login";

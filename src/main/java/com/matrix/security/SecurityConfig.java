@@ -29,6 +29,7 @@ public class SecurityConfig {
                     .antMatchers("/bootstrap/css/**").permitAll()
                     .antMatchers("/bootstrap/css/bootstrap.min.css").permitAll()
                     .antMatchers("/bootstrap/css/style.css").permitAll()
+                    .antMatchers("/platforma/loginProcess").permitAll()
                     .anyRequest()
                     .authenticated()
                     .and()

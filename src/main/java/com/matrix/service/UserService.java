@@ -4,6 +4,7 @@ import com.matrix.exception.NonUniqueCnpException;
 import com.matrix.exception.NonUniqueEmailException;
 import com.matrix.model.User;
 import com.matrix.repository.UserRepository;
+import com.matrix.security.PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
