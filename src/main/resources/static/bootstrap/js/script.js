@@ -1,8 +1,3 @@
-function closeDivProgramare() {
-   document.getElementById('loginModal').style.display='none';
-}
-$('.mdb-select').materialSelect();
-
 var expanded = false;
 
 function showCheckboxes() {
@@ -15,3 +10,4 @@ function showCheckboxes() {
     expanded = false;
   }
 }
+
