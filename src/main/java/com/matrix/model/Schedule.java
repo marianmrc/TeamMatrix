@@ -24,9 +24,6 @@ public class Schedule {
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private User user;
 
-    @OneToMany(mappedBy = "schedule")
-    private List<Centre> centres;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "vaccination_id", nullable = false, unique = true)
     private Vaccination vaccination;

@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="static/style.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/style.css"/>
     <title>
         Platforma de vaccinare impotriva COVID-19
     </title>
 </head>
 <body>
-<div class="logo">
-    <img id="logo" src="static/img/logo.png" alt="logo"/>
-</div>
 
 <div class="logout">
     <button class="btn btn-outline-info" type="button" onClick="logout()"> Log out</button>
 </div>
 
 <div class="headerCentre">
+    <br><br><br><br>
     <h3>Centre de vaccinare</h3>
 </div>
 
@@ -30,17 +28,22 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>Aiud</td>>
-        <td>Pfizer</td>
-        <td>2345</td>
-        <td><button class="btn btn-sm btn-outline-info" onClick="location.href='date.html'">Programeaza-te!</button></td>
+    <tr th:each="center : ${centres}">
+        <td th:text="${center.city}"></td>
+        <td th:text="${center.vaccine}"></td>
+        <td th:text="${center.available}"></td>
+        <td>
+            <form method="post" action="/platforma/centres/date">
+                <button class="btn btn-sm btn-outline-info" onClick="location.href='date.html'">Programeaza-te!</button>
+            </form>
+        </td>
     </tr>
+
 
     </tbody>
 </table>
 
 </body>
 </html>
-<script src="static/script.js"></script>
-<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/bootstrap/js/script.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>

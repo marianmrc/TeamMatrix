@@ -2,25 +2,40 @@ package com.matrix.controller;
 
 import com.matrix.exception.NonUniqueCnpException;
 import com.matrix.exception.NonUniqueEmailException;
+import com.matrix.model.Centre;
 import com.matrix.model.User;
-import com.matrix.security.PasswordEncoder;
+import com.matrix.model.Vaccination;
+import com.matrix.service.CentreService;
 import com.matrix.service.UserService;
+import com.matrix.service.VaccinationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 @RequestMapping("/platforma")
 public class UserController {
     private final UserService userService;
+    private final CentreService centreService;
+    private final VaccinationService vaccinationService;
+    private String userEmail;
+    private Centre centreSelected;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService,
+                          CentreService centreService,
+                          VaccinationService vaccinationService) {
         this.userService = userService;
+        this.centreService = centreService;
+        this.vaccinationService = vaccinationService;
     }
 
     @RequestMapping(value = "/login")
@@ -30,14 +45,42 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping(value = "/loginProcess")
+    @PostMapping(value = "/centres")
     public String loginProcess(@ModelAttribute User user,
                                BindingResult result,
                                Model model) {
         if (userService.login(user.getEmail(), user.getPassword())) {
-            return "vaccination";
+            userEmail = user.getEmail();
+            List<Centre> centres = centreService.getCentres();
+            model.addAttribute("user", user);
+            model.addAttribute("centres", centres);
+            return "centre";
         }
         return "login";
+    }
+
+    @PostMapping(value = "/centres/date")
+    public String date(@ModelAttribute User user,
+                       @ModelAttribute Centre centre,
+                       BindingResult result,
+                       Model model) {
+        model.addAttribute("user", user);
+        model.addAttribute("centre", centre);
+        centreSelected = centre;
+        return "date";
+    }
+
+    @PostMapping(value = "/centres/date/program")
+    public String programming(@ModelAttribute User user,
+                              @ModelAttribute Vaccination vaccination,
+                              @ModelAttribute Centre centre,
+                              BindingResult result,
+                              Model model) {
+        model.addAttribute("user", user);
+        model.addAttribute("centre", centre);
+        model.addAttribute("vaccination", vaccination);
+
+        return "done";
     }
 
     @RequestMapping({"/"})

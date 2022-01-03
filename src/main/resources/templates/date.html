@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="static/style.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bootstrap/css/style.css"/>
     <title>
         Platforma de vaccinare impotriva COVID-19
     </title>
 </head>
 <body>
-<div class="logo">
-    <img id="logo" src="static/img/logo.png" alt="logo"/>
-</div>
 
 <div class="logout">
     <button class="btn btn-outline-info" type="button" onClick="logout()"> Log out</button>
 </div>
 
 <div class="headerCentre">
+    <br><br><br><br>
     <h3>Alegeti data si ora programarii</h3>
 </div>
 
@@ -30,9 +28,13 @@
     </thead>
     <tbody>
     <tr>
-        <td>23.01.2022</td>>
+        <td>23.01.2022</td>
         <td>12:00</td>
-        <td><button class="btn btn-sm btn-outline-info" onClick="location.href='date.html'">Programeaza-te!</button></td>
+        <td>
+            <form method="post" action="/platforma/centres/date/program">
+                <button class="btn btn-sm btn-outline-info" onClick="location.href='date.html'">Programeaza-te!</button>
+            </form>
+        </td>
     </tr>
 
     </tbody>
@@ -40,5 +42,5 @@
 
 </body>
 </html>
-<script src="static/script.js"></script>
-<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/script.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>

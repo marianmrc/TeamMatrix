@@ -10,8 +10,10 @@
 <body>
 
 <div class="header" style="margin-left:34%;">
+    <br><br><br><br>
     <h3>Platforma de vaccinare impotriva COVID-19 </h3>
 </div>
+
 
 <div class="modal-dialog" role="document" id="loginModal">
     <div class="modal-content" >
@@ -19,7 +21,7 @@
             <h5>Logheaza-te!</h5>
         </div>
         <div class="modal-body">
-            <form id="login" action="/platforma/loginProcess" th:object="${user}" method="post" enctype="multipart/form-data">
+            <form id="login" action="/platforma/centres" th:object="${user}" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <lable for="mail" class="col-form-lable" >E-mail</lable>
                     <input form="login" type="email" class="form-control" th:field="*{email}" id="mail" name="mail" placeholder="E-mail" required>

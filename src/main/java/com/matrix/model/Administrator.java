@@ -35,7 +35,4 @@ public class Administrator {
     @Column(nullable = false)
     @Size(min = 8)
     private String password;
-
-    @OneToMany(mappedBy = "administrator")
-    private List<Vaccination> vaccinations;
 }

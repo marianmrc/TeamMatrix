@@ -1,5 +1,6 @@
 package com.matrix.service;
 
+import com.matrix.model.Vaccination;
 import com.matrix.repository.VaccinationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,5 +12,9 @@ public class VaccinationService {
     @Autowired
     public VaccinationService(VaccinationRepository vaccinationRepository) {
         this.vaccinationRepository = vaccinationRepository;
+    }
+
+    public void addProgramming(Vaccination vaccination) {
+
     }
 }

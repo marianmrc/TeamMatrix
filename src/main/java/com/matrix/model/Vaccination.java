@@ -36,7 +36,7 @@ public class Vaccination {
     @Column(name = "second_dose_completed", nullable = false)
     private Boolean secondDoseCompleted;
 
-    @ManyToOne
-    @JoinColumn(name = "administrator_id", nullable = false)
-    private Administrator administrator;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", nullable = false, unique = true)
+    private User user;
 }
